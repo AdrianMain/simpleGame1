@@ -1,0 +1,20 @@
+Proponowany projekt: **Gra "Szybkie Palce"**.
+
+### Opis gry
+Stwórz prostą grę przeglądarkową, w której dwóch graczy siedzi przy jednej klawiaturze i czeka na zapalający się sygnał (np. zmieniający się kolor lub pojawiający się komunikat). W odpowiednim momencie każdy gracz musi nacisnąć swój klawisz (np. "A" dla pierwszego, "L" dla drugiego). Gracz, który zareaguje szybciej, zdobywa punkt. Wygrywa ten, kto pierwszy uzyska określoną liczbę punktów (np. 3).[1]
+
+### Co możesz się nauczyć
+- Obsługa zdarzeń z klawiatury (keydown).
+- Losowanie czasu sygnału za pomocą funkcji timeouts.
+- Prosta logika gry: liczenie punktów, mechanika rund, komunikaty dla wygranych i przegranych.
+- Dynamiczna aktualizacja elementów HTML i stylów CSS.
+- Walidacja nieuczciwych prób (np. klikanie przed czasem nie daje punktów).
+
+
+### Lista zadań
+- Basic html divy i czas wyświetlany na ekranie dla debugu
+- Pobieranie z klawiatury zdarzerń i sprawdzanie który gracz był pierwszy
+- System punktów
+- System dobrego liczenia czasu i basic memu gry(graj, odliczanie 321,)
+- Jesli gracz wygra komunikat zwycięstwa i zagraj ponownie. Dodatkowo wyświetlenie punktów
+-
