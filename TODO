@@ -12,9 +12,6 @@ Stwórz prostą grę przeglądarkową, w której dwóch graczy siedzi przy jedne
 
 
 ### Lista zadań
-- Basic html divy i czas wyświetlany na ekranie dla debugu
-- Pobieranie z klawiatury zdarzerń i sprawdzanie który gracz był pierwszy
-- System punktów
 - System dobrego liczenia czasu i basic memu gry(graj, odliczanie 321,)
 - Jesli gracz wygra komunikat zwycięstwa i zagraj ponownie. Dodatkowo wyświetlenie punktów
 -

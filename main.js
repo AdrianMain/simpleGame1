@@ -6,35 +6,38 @@ const player1 = document.getElementById('p1');
 const player2 = document.getElementById('p2');
 
 
-function timeCount() {
-    let chosenTime = Math.floor((Math.random()*10)+1);
-    console.log(chosenTime);
-    info.innerHTML = `Wylosowany czas jest równy ${chosenTime}s`;
-    let time = setTimeout(alertME, chosenTime*1000);
-}
-
-function alertME() {
-    window.alert('Czas minął!!');
-}
-
-window.addEventListener("keydown", function(event){
-    if (event.defaultPrevented) {
+function listenerFunc(event) {
+        if (event.defaultPrevented) {
         return;
     }
     switch(event.key){
         case "a":
             console.log('aaa');
-            addPoints(1)
+            addPoints(1);
+            window.removeEventListener("keydown", listenerFunc, true);
             break;
         case 'l':
             console.log('lll');
-            addPoints(2)
+            addPoints(2);
+            window.removeEventListener("keydown", listenerFunc, true);
             break;
         default:
             return;
     }
     event.preventDefault();
-}, true)
+}
+
+function timeCount() {
+    let chosenTime = Math.floor((Math.random()*5)+1);
+    console.log(chosenTime);
+    info.innerHTML = `Wylosowany czas jest równy ${chosenTime}s`;
+    let time = setTimeout(startRound, chosenTime*1000);
+}
+
+function startRound() {
+    window.addEventListener("keydown",listenerFunc ,true)
+    console.log('START');
+}
 
 function addPoints(who) {
     if (who == 1) {
