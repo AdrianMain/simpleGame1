@@ -2,16 +2,79 @@
     font-family: Pixel;
     src: url(PixelifySans.ttf);
 }
+@keyframes glowGreen {
+    0% {background-color: rgb(122, 201, 122)}
+    66% {background-color: rgb(53, 175, 53)}
+    100% {background-color: rgb(122, 201, 122)}
+}
+@keyframes glowBlue {
+    0% {background-color: rgb(102, 177, 221)}
+    66% {background-color: rgb(44, 128, 197)}
+    100% {background-color: rgb(102, 177, 221)}
+}
+@keyframes round {
+    from {color: red; font-size: 50px;}
+    to {color: black; font-size: 150px;}
+}
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+@keyframes wictory {
+    0% {visibility: visible;}
+    50% {visibility: visible;}
+    60% {visibility: hidden;}
+    100% {visibility: hidden;}
+}
+@keyframes block {
+    from {width: 150px; visibility: visible;}
+    to {width: 0px; visibility: hidden;}
+}
+
 * {
     font-family: Pixel, Verdana, Geneva, Tahoma, sans-serif;
 }
+body {
+    background-color: rgb(240, 234, 225);
+}
 
 .trafficLight {
-    width: 100px;
-    height: 100px;
-    background-color: green;
-    border-radius: 50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
 }
+.trafficGreen {
+    background-color: green;
+}
+.trafficYellow {
+    background-color: yellow;
+}
+.trafficRed {
+    background-color: red;
+}
+.trafficGrey {
+    background-color: grey;
+}
+.roundManager {
+    width: 700px;
+    height: 200px;
+    text-align: center;
+    font-size: 50px;
+    color: red;
+    animation-name: round;
+    animation-duration: 3s;
+}
+.endGame {
+    width: 700px;
+    height: 200px;
+    text-align: center;
+    font-size: 50px;
+    color: red;
+    animation-name: wictory;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
 .points {
     display: flex;
     width: 100%;
@@ -31,20 +94,60 @@
     height: 100px;
     color: white;
     border-radius: 20px;
+    box-shadow: rgb(168, 168, 168) 1px 2px 2px 2px;
 }
 .g1 .align {
     background-color: rgb(122, 201, 122);
+    animation-name: glowGreen;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
 }
 .g2 .align {
     background-color: rgb(44, 128, 197);
+    animation-name: glowBlue;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
 }
 .player {
     font-weight: bold;
-    font-size: 40px;
+    font-size: 28px;
     margin-bottom: 0;
-    margin-top: 8px;
+}
+.number {
+    font-size: 30px;
+    margin-top: 10px;
 }
 .gameName {
     text-align: center;
     font-size: 70px;
+}
+.center {
+    margin-top: 50px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+.start {
+    width: 100px;
+    height: 70px;
+    font-size: 20px;
+}
+
+.rotate {
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+.block {
+    background-color: rgb(226, 47, 92);
+    border-radius: 5px;
+    animation-name: block;
+    animation-duration: 2s;
+}
+#block1, #block2 {
+    margin-top: 20px;
+    width: 150px;
+    height: 10px;
 }
