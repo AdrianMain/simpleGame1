@@ -18,10 +18,10 @@ function listenerFunc(event) {
         if (event.defaultPrevented) {
         return;
     }
-    switch(event.key){
+    switch(event.key.toLowerCase()){
         case "a":
             if(!isp1blocked) {
-                console.log('aaa');
+                // console.log('aaa');
                 addPoints(1);
                 window.removeEventListener("keydown", listenerFunc, true);
                 changingLight('Grey');
@@ -30,9 +30,9 @@ function listenerFunc(event) {
                 setTimeout(gameManager, 3000);
             }
             break;
-        case 'l':
+        case "l":
             if(!isp2blocked) {
-                console.log('lll');
+                // console.log('lll');
                 addPoints(2);
                 window.removeEventListener("keydown", listenerFunc, true);
                 changingLight('Grey');
@@ -47,11 +47,11 @@ function listenerFunc(event) {
     event.preventDefault();
 }
 function setTrap(event) {
-    console.log('trap activated');
+    // console.log('trap activated');
         if (event.defaultPrevented) {
         return;
     }
-    switch(event.key){
+    switch(event.key.toLowerCase()){
         case "a":
             if(!isp1blocked) {
                 block1.classList.add('block');
@@ -59,7 +59,7 @@ function setTrap(event) {
                 setTimeout(()=> {block1.classList.remove('block'); isp1blocked = false;}, 2000);
             }
             break;
-        case 'l':
+        case "l":
             if(!isp2blocked) {
                 block2.classList.add('block');
                 isp2blocked = true;
@@ -101,7 +101,7 @@ function timeCount() {
     light.classList.remove('roundManager');
     light.classList.add('trafficLight');
     let chosenTime = Math.floor((Math.random()*6)+1)+1;
-    console.log(chosenTime);
+    // console.log(chosenTime);
     // info.innerHTML = `Wylosowany czas jest równy ${chosenTime}s`;
     window.addEventListener("keydown", setTrap, true);
     setTimeout(() => window.removeEventListener("keydown", setTrap, true), (chosenTime*1000)-20);
@@ -113,7 +113,7 @@ function timeCount() {
 function startRound() {
     window.addEventListener("keydown",listenerFunc ,true)
     changingLight('Green');
-    console.log('START');
+    // console.log('START');
 }
 
 function addPoints(who) {
@@ -136,7 +136,7 @@ function changingLight(color) {
     light.classList.remove('trafficGreen');
     light.classList.remove('trafficGrey');
     text = 'traffic' + color;
-    console.log('Changing to ' + text);
+    // console.log('Changing to ' + text);
     light.classList.add(text);
 }
 
